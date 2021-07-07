@@ -1,1 +1,46 @@
-<p>login works!</p>
+
+<mat-card role="group" class="mat-elevation-z4">
+    <mat-card-title><mat-icon>https</mat-icon> Bayt Al Riyadah Est Login </mat-card-title>
+      <mat-list>
+        <mat-divider></mat-divider>
+      </mat-list>
+    <!--
+    <mat-card-subtitle> Bayt Al Riyadah Est </mat-card-subtitle>
+        <mat-divider></mat-divider>
+      <mat-list>
+        <mat-list-item>Bayt Al Riyadah Est</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" novalidate>
+      <div style="font-size: 12px">
+        <mat-card-content>
+    <mat-form-field appearance="fill" style=" margin-bottom: -10px">
+      <mat-label>User Name</mat-label>
+      <input matInput placeholder="User Name" type=text [(ngModel)]="value" formControlName="username">
+    </mat-form-field>
+    <mat-form-field appearance="fill" style=" margin-bottom: -10px">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" type=password [(ngModel)]="value" formControlName="password">
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+    <button mat-raised-button color="primary" (click) = "onLogin()">Login Now</button> 
+    </mat-form-field>
+    <mat-checkbox style="margin-left: -60px;">Remember me next time. </mat-checkbox>
+    
+      <mat-list>
+        <a><mat-list-item><a>Forgot your password?</a></mat-list-item></a>
+      </mat-list>
+    <mat-divider></mat-divider>
+    </mat-card-content>
+    </div>
+    </form>
+    <!--
+      <mat-list>
+      <mat-list-item>Don't have a login ID?</mat-list-item>
+      </mat-list>
+    -->
+    <mat-card-title> Don't have a login ID? </mat-card-title>
+    <mat-card-subtitle> Signing up is easy.</mat-card-subtitle>
+    <button mat-raised-button color="primary">Sign Up Now</button> 
+    </mat-card>
