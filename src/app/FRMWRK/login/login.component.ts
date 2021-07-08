@@ -1,5 +1,6 @@
 
 
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import {Router} from '@angular/router';
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private router: Router, private formBuilder: FormBuilder) {
+  constructor(private router: Router, private formBuilder: FormBuilder, private httpClient:HttpClient) {
 
     this.loginForm = this.formBuilder.group({username:[''],password:['']});
   }
@@ -36,6 +37,14 @@ export class LoginComponent implements OnInit {
   onLogin() : void 
   {
     console.log(this.loginForm.value);
+    var formData: any = new FormData();
+    formData.append("username", this.username);
+    formData.append("password", this.password);
+
+    this.httpClient.post('http://localhost:4000/api/create-user', formData).subscribe(
+    (response) => console.log(response),
+    (error) => console.log(error)
+  )
 
     if(this.loginForm.value.username == "admin") {
       this.router.navigate(["menu-bar"])
