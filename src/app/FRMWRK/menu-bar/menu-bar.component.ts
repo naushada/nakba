@@ -1,5 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { MatMenuItem } from '@angular/material/menu';
 import { Routes, RouterModule, RoutesRecognized, Router } from '@angular/router';
+
+
+
+interface Menu {
+  id: string;
+  isSubMenu: boolean;
+  menuItemName: string;
+  subMenuItems: Array<string>;
+}
+
+interface MainMenuBar extends Array<Menu> {
+
+}
+
 
 @Component({
   selector: 'app-menu-bar',
@@ -8,6 +23,13 @@ import { Routes, RouterModule, RoutesRecognized, Router } from '@angular/router'
 })
 export class MenuBarComponent implements OnInit {
 
+mainMenuBar : MainMenuBar = [
+  {id: "aa", isSubMenu: false, menuItemName: "HOME", subMenuItems: []},
+  {id: "aa", isSubMenu: true, menuItemName: "SHIPPING", subMenuItems: ["Shipping", "Job Scheduling", "Manifesting", "Supplies", "Shipment Pricing", "ALTREF Update"]},
+  {id: "aa", isSubMenu: true, menuItemName: "TRACKING", subMenuItems: ["Tracking Enquiry", "Tracking Entry"]},
+  {id: "aa", isSubMenu: true, menuItemName: "REPORTING", subMenuItems: ["Operations Discrepancy Report", "Delivery Run Manifest", "Shipment History Report"]},
+  {id: "aa", isSubMenu: true, menuItemName: "CONTACT US", subMenuItems: []}
+];
   isActive = false;
   selectedMenuItem : string;
 

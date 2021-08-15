@@ -5,43 +5,21 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<!-- Menubar-->
-<mat-toolbar class="raisedBar" color="primary" [class.mat-elevation-z2]="!isActive"
-[class.mat-elevation-z8]="isActive">
-<mat-toolbar-row>
-    <button class="mat-typography" mat-button [matMenuTriggerFor]="home">HOME</button>
-    <mat-menu #home="matMenu" yPosition="above">
-    </mat-menu>
-    
-    <button mat-button [matMenuTriggerFor]="shipping">SHIPPING</button>
-    <mat-menu #shipping="matMenu" yPosition="below">
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Shipping</button>
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Job Scheduling</button>
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Manifesting</button>
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Supplies</button>
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Shipment Pricing</button>
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Alt Ref Update</button>
-    </mat-menu>
-    
-    <button mat-button [matMenuTriggerFor]="tracking">TRACKING</button>
-    <mat-menu #tracking="matMenu" xPosition="before">
-      <button mat-menu-item (click) = "onClickMenuItem('TrackingEnquiry')">Tracking Enquiry</button>
-      <button mat-menu-item (click) = "onClickMenuItem('TrackingEntry')">Tracking Entry</button>
-    </mat-menu>
-    
-    
-    <button mat-button [matMenuTriggerFor]="reporting">REPORTING</button>
-    <mat-menu #reporting="matMenu" xPosition="after">
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Operations Discrepancy Report </button>
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')">Delivery Run Manifest</button>
-      <button mat-menu-item (click) = "onClickMenuItem('Shipping')"> Shipment History Report</button>
-    </mat-menu> 
-</mat-toolbar-row>
-</mat-toolbar>
+<header>
+  <div class="container">
+    <div class="navbar">
+      <ng-template ngFor let-menu [ngForOf]="mainMenuBar">
+        <a href="#home" *ngIf="menu.subMenuItems.length === 0">{{menu.menuItemName}}</a>
+        <div class="dropdown" *ngIf="menu.subMenuItems.length > 0">
+          <button class="dropbtn">{{menu.menuItemName}}
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" *ngFor="let item of menu.subMenuItems">{{item}}</a>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
 
-
-<mat-toolbar>
-    <mat-toolbar-row>
-      Home<mat-icon>navigate_next</mat-icon>
-    </mat-toolbar-row>
-</mat-toolbar>
+</header>

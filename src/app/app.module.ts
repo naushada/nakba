@@ -37,6 +37,7 @@ import { DeliveryRunManifestComponent } from './REPORTING/delivery-run-manifest/
 import { ShipmentHistoryReportComponent } from './REPORTING/shipment-history-report/shipment-history-report.component';
 import { LoginComponent } from './FRMWRK/login/login.component';
 import { MenuBarComponent } from './FRMWRK/menu-bar/menu-bar.component';
+import { BreadCrumComponent } from './FRMWRK/bread-crum/bread-crum.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MenuBarComponent } from './FRMWRK/menu-bar/menu-bar.component';
     DeliveryRunManifestComponent,
     ShipmentHistoryReportComponent,
     LoginComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    BreadCrumComponent
   ],
   imports: [
     BrowserModule,
