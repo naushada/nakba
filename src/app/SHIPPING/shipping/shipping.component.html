@@ -1,21 +1,58 @@
 <app-menu-bar></app-menu-bar>
-<app-bread-crum></app-bread-crum>
+<app-bread-crum ></app-bread-crum>
 <mat-tab-group mat-align-tabs="start" dynamicHeight animationDuration="0ms">
   <mat-tab label="SHIPPING">
-    <div class="container">
     <form [formGroup]="newShipping" (ngSubmit)="onSubmit()" >
-      <div class="one">
-      <span><label for="serviceType" class="one">Address: </label>
-      <input type="text" class="two"></span>
-      </div>
-      <div class="two" formGroupName="senderInformation">
+    <div class="container">
+      <fieldset>
+        <legend>To Be Decide </legend>
+        <div class="subcontainer-col1">
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Sender Information</legend>
+        <div class="subcontainer-col2" formGroupName="senderInformation">
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Receiver Information</legend>
+        <div formGroupName="receiverInformation">
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
 
-      <input type="text" >
-      </div>
-      <div formGroupName="receiverInformation"></div>
-      <div formGroupName="shipmentInformation"></div>
-    </form>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Shipment Information</legend>
+        <div formGroupName="shipmentInformation">
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Address: </label>
+          <input class="text-40" type="text" >
+
+        </div>
+      </fieldset>
     </div>
+    </form>
   </mat-tab>
   <mat-tab label="JOB SCHEDULING">
   </mat-tab>
