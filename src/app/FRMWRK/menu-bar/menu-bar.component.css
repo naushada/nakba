@@ -9,7 +9,12 @@
      background-color: #6200ee;
      position: relative;
      padding: 10px;
-     font-size: 20px;;
+     font-size: 20px;
+     /*
+     z-index: 10000;
+     position: fixed;
+     top: 0px;
+     width: 100%;*/
  }
 
  /* Navbar container */
@@ -84,4 +89,15 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
- 
+
+  /* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+.logo { 
+  max-height: 10%;
+  max-width: 100%; 
+  overflow: visible;
+  padding: 10px;
+}

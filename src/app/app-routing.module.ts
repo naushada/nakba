@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'job-scheduling', component: JobSchedulingComponent },
   { path: 'manifesting', component: ManifestingComponent },
   { path: 'shipment-pricing', component: ShipmentPricingComponent },
-  { path: 'shipping', component: ShippingComponent },
+  { path: 'menu-bar/SHIPPING/Shipping', component: ShippingComponent },
   { path: 'supplies', component: SuppliesComponent },
   /* Reporting Submenu Items(s) */
   { path: 'operations-discrepancy-report', component: OperationsDiscrepancyReportComponent },

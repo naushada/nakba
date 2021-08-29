@@ -1,3 +1,4 @@
+import { TemplateLiteralElement } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { MatMenuItem } from '@angular/material/menu';
 import { Routes, RouterModule, RoutesRecognized, Router } from '@angular/router';
@@ -30,7 +31,7 @@ mainMenuBar : MainMenuBar = [
   {id: "aa", isSubMenu: true, menuItemName: "REPORTING", subMenuItems: ["Operations Discrepancy Report", "Delivery Run Manifest", "Shipment History Report"]},
   {id: "aa", isSubMenu: true, menuItemName: "CONTACT US", subMenuItems: []}
 ];
-  isActive = false;
+  isActive = true;
   selectedMenuItem : string;
 
   ngOnInit(): void {
@@ -56,5 +57,17 @@ mainMenuBar : MainMenuBar = [
         alert("Invalid credentials ");
 
     }
+  }
+
+  transform(item: string, parent:string) : string {
+    //Removing the white space in between to form the routerLink
+    let tmpItem:string = item.replace(/ /g, '');
+    tmpItem = parent + "/"+ tmpItem;
+    console.log(tmpItem);
+    return(tmpItem);
+  }
+
+  showMenubar() : boolean {
+    return(this.isActive);
   }
 }

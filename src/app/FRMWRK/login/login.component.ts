@@ -13,6 +13,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
 
   value = ""
+  isLoginSuccess:boolean = false;
 
   loginForm;
 
@@ -41,12 +42,10 @@ export class LoginComponent implements OnInit {
     formData.append("username", this.username);
     formData.append("password", this.password);
 
-    this.httpClient.post('http://localhost:4000/api/create-user', formData).subscribe(
-    (response) => console.log(response),
-    (error) => console.log(error)
-  )
+    this.httpClient.post('http://localhost:4000/api/create-user', formData).subscribe((response) => console.log(response), (error) => console.log(error));
 
     if(this.loginForm.value.username == "admin") {
+      this.isLoginSuccess = true;
       this.router.navigate(["menu-bar"])
     } else {
       alert("Invalid credentials "+ this.loginForm.value);

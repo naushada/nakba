@@ -21,6 +21,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
 
 /* Project specific Component */
 import { AppComponent } from './app.component';
@@ -38,6 +40,7 @@ import { ShipmentHistoryReportComponent } from './REPORTING/shipment-history-rep
 import { LoginComponent } from './FRMWRK/login/login.component';
 import { MenuBarComponent } from './FRMWRK/menu-bar/menu-bar.component';
 import { BreadCrumComponent } from './FRMWRK/bread-crum/bread-crum.component';
+import { DbserviceService } from './FRMWRK/SERVICE/POST/dbservice.service';
 
 @NgModule({
   declarations: [
@@ -77,9 +80,10 @@ import { BreadCrumComponent } from './FRMWRK/bread-crum/bread-crum.component';
     MatDividerModule,
     MatListModule,
     MatGridListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTabsModule
   ],
-  providers: [],
+  providers: [MenuBarComponent, BreadCrumComponent, DbserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

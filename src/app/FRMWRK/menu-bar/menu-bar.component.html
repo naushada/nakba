@@ -1,25 +1,24 @@
 <!-- Top Bar-->
 <mat-toolbar>
     <mat-toolbar-row>
-        <div> For Logo</div>
+      <div> <img class="logo" src="assets/PHOTO-2021-06-27-11-33-26.jpg"> </div>
     </mat-toolbar-row>
 </mat-toolbar>
 
-<header>
+<ng-container>
   <div class="container">
     <div class="navbar">
       <ng-template ngFor let-menu [ngForOf]="mainMenuBar">
         <a href="#home" *ngIf="menu.subMenuItems.length === 0">{{menu.menuItemName}}</a>
         <div class="dropdown" *ngIf="menu.subMenuItems.length > 0">
-          <button class="dropbtn">{{menu.menuItemName}}
-            <i class="fa fa-caret-down"></i>
-          </button>
+          <button class="dropbtn">{{menu.menuItemName}}</button>
           <div class="dropdown-content">
-            <a href="#" *ngFor="let item of menu.subMenuItems">{{item}}</a>
+            <ng-template ngFor let-item [ngForOf]="menu.subMenuItems">
+              <a [routerLink]="transform(item, menu.menuItemName)">{{item}}</a>
+            </ng-template>
           </div>
         </div>
       </ng-template>
     </div>
   </div>
-
-</header>
+</ng-container>
