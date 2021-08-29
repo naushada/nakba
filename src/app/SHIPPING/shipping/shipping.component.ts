@@ -42,6 +42,9 @@ export class ShippingComponent implements OnInit {
       shipmentInformation: this.fb.group({
 
       }),
+      shipmentOptions: this.fb.group({
+
+      }),
      
       /* formArrayName is - aliases */
       //aliases:this.fb.array([this.fb.control])

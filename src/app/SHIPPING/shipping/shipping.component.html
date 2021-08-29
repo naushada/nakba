@@ -5,51 +5,167 @@
     <form [formGroup]="newShipping" (ngSubmit)="onSubmit()" >
     <div class="container">
       <fieldset>
-        <legend>To Be Decide </legend>
-        <div class="subcontainer-col1">
-          <label class = "label-40" for="serviceType" >Address: </label>
-          <input class="text-40" type="text" >
-          <label class = "label-40" for="serviceType" >Address: </label>
-          <input class="text-40" type="text" >
-          <label class = "label-40" for="serviceType" >Address: </label>
-          <input class="text-40" type="text" >
-          
-        </div>
-      </fieldset>
-      <fieldset>
         <legend>Sender Information</legend>
         <div class="subcontainer-col2" formGroupName="senderInformation">
-          <label class = "label-40" for="serviceType" >Address: </label>
+          <label class = "label-40" for="serviceType" >Bill To: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Name: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Country: </label>
           <input class="text-40" type="text" >
           <label class = "label-40" for="serviceType" >Address: </label>
           <input class="text-40" type="text" >
-          <label class = "label-40" for="serviceType" >Address: </label>
+          <label class = "label-40" for="serviceType" >City/Town: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >State: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Postcode: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Contact: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Phone: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >E-Mail: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Save Sender to Address Book As REF: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Receiving Country Tax ID: </label>
           <input class="text-40" type="text" >
         </div>
       </fieldset>
       <fieldset>
         <legend>Receiver Information</legend>
         <div formGroupName="receiverInformation">
-          <label class = "label-40" for="serviceType" >Address: </label>
+          <label class = "label-40" for="serviceType" >Name: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Country: </label>
           <input class="text-40" type="text" >
           <label class = "label-40" for="serviceType" >Address: </label>
           <input class="text-40" type="text" >
-          <label class = "label-40" for="serviceType" >Address: </label>
+          <label class = "label-40" for="serviceType" >City/Town: </label>
           <input class="text-40" type="text" >
-
+          <label class = "label-40" for="serviceType" >State: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Postcode: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Contact: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Phone: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >E-Mail: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Save Sender to Address Book As REF: </label>
+          <input class="text-40" type="text" >
         </div>
       </fieldset>
       <fieldset>
         <legend>Shipment Information</legend>
         <div formGroupName="shipmentInformation">
-          <label class = "label-40" for="serviceType" >Address: </label>
+          <label class = "label-40" for="serviceType" >Service: </label>
           <input class="text-40" type="text" >
-          <label class = "label-40" for="serviceType" >Address: </label>
+          <label class = "label-40" for="serviceType" >No. Of Items: </label>
           <input class="text-40" type="text" >
-          <label class = "label-40" for="serviceType" >Address: </label>
+          <label class = "label-40" for="serviceType" >Description: </label>
           <input class="text-40" type="text" >
-
+          <label class = "label-40" for="serviceType" >Harminised Code: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Weight: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Dead Weight: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Cubic Measure: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Cubic (L x W x H) : </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Customs Value: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >COD Amount: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Shipment Terms: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Incoterms: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Customer Ref. #1: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Customer Ref. #2: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Bag Number: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Origin of Goods: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Reason of Export: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Returns Service: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Delivery Notes: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Notes: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >CPC Code: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >SKU Number: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >ATE Number: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Product URL: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Total Cost of Goods: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Duties: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >EORI: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Freight Cost: </label>
+          <input class="text-40" type="text" >
+          <label class = "label-40" for="serviceType" >Total GST paid (if any): </label>
+          <input class="text-40" type="text" >
+          <!--<fieldset>
+            <legend>Shipment Options</legend>
+            <div formGroupName="shipmentOptions">
+              <label class = "label-40" for="serviceType" >Assign to Manifest: </label>
+              <input type="checkbox" >
+              <label class = "label-40" for="serviceType" >Autogenerate: </label>
+              <input type="text" >
+              <label class = "label-40" for="serviceType" >Uplift Date: </label>
+              <input type="text" >
+              <label class = "label-40" for="serviceType" >Uplift Time: </label>
+              <input type="text" >
+              <label class = "label-40" for="serviceType" >Receiver: </label>
+              <input type="text" >
+              <label class = "label-40" for="serviceType" >To Location: </label>
+              <input type="text" >
+              <label class = "label-40" for="serviceType" >Docket #: </label>
+              <input type="text" >
+              <label class = "label-40" for="serviceType" >Fligt #: </label>
+              <input type="text" >
+              <label class = "label-40" for="serviceType" >Courier #: </label>
+              <input type="text" >
+            </div>
+          </fieldset>-->
         </div>
+      </fieldset>
+      <fieldset>
+        <legend>Shipment Options</legend>
+            <div formGroupName="shipmentOptions">
+              <label class = "label-40" for="serviceType" >Assign to Manifest: </label>
+              <input type="checkbox" >
+              <label class = "label-40" for="serviceType" >Autogenerate: </label>
+              <input class="text-40" type="text" >
+              <label class = "label-40" for="serviceType" >Uplift Date: </label>
+              <input class="text-40" type="text" >
+              <label class = "label-40" for="serviceType" >Uplift Time: </label>
+              <input class="text-40" type="text" >
+              <label class = "label-40" for="serviceType" >Receiver: </label>
+              <input class="text-40" type="text" >
+              <label class = "label-40" for="serviceType" >To Location: </label>
+              <input class="text-40" type="text" >
+              <label class = "label-40" for="serviceType" >Docket #: </label>
+              <input class="text-40" type="text" >
+              <label class = "label-40" for="serviceType" >Fligt #: </label>
+              <input class="text-40" type="text" >
+              <label class = "label-40" for="serviceType" >Courier #: </label>
+              <input class="text-40" type="text" >
+            </div>
       </fieldset>
     </div>
     </form>
