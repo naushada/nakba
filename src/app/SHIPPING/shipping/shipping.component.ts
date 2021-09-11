@@ -14,35 +14,74 @@ export class ShippingComponent implements OnInit {
 
   initialize() : void {
     this.newShipping = this.fb.group({
-      serviceType:['']
-    ,
       senderInformation: this.fb.group({
+        billTo:[''],
         name:[''],
         country:[''],
-        city:[''],
         address:[''],
+        city:[''],
         state:[''],
-        pin:[''],
+        postCode:[''],
         contact:[''],
+        phone:[''],
         email:[''],
-        alert:false
+        asRef:[''],
+        recvCountryTaxId:['']
       }),
       receiverInformation: this.fb.group({
         name:[''],
         country:[''],
-        city:[''],
         address:[''],
+        city:[''],
         state:[''],
         pin:[''],
+        postCode:[''],
         contact:[''],
+        phone:[''],
         email:[''],
-        alert:false
+        sendAsRef:['']
       })
       ,
       shipmentInformation: this.fb.group({
+        service:[''],
+        noOfItems:[''],
+        description:[''],
+        harmonisedCode:[''],
+        weight:[''],
+        deadWeight:[''],
+        cubicMeasure:[''],
+        cubic:[''],
+        customValue:[''],
+        codAmount:[''],
+        shipmentTerms:[''],
+        incoterms:[''],
+        customerRef1:[''],
+        customerRef2:[''],
+        bagNumber:[''],
+        originOfGoods:[''],
+        reasonOfExport:[''],
+        returnsService:[''],
+        deliveryNotes:[''],
+        notes:[''],
+        cpcCode:[''],
+        skuNumber:[''],
+        ateNumber:[''],
+        productUrl:[''],
+        totalCostOfGoods:[''],
+        duties:[''],
+        eori:[''],
+        freightCost:[''],
+        gst:['']
 
       }),
       shipmentOptions: this.fb.group({
+        upliftDate:'',
+        upliftTime:'',
+        receiver:'',
+        toLocation:'',
+        docket:'',
+        flight:'',
+        carrier:''
 
       }),
      
@@ -82,7 +121,7 @@ export class ShippingComponent implements OnInit {
  
   onSubmit() {
     console.log(this.newShipping.value);
-    this.post.post_parcelInfo(this.newShipping.value).subscribe(data => {console.log(data)}, (error:any) => {console.log(error)});
+    this.put.put_parcelInfo(this.newShipping.value).subscribe(data => {console.log(data)}, (error:any) => {console.log(error)});
 
     //this.coreService.get_parcelInfo().subscribe(data=>this.shippingInfo = data);
     //console.log(this.shippingInfo);
@@ -97,7 +136,7 @@ export class ShippingComponent implements OnInit {
   }
 
 
-  constructor(private fb:FormBuilder, private post:DbserviceService) {
+  constructor(private fb:FormBuilder, private put:DbserviceService) {
   }
 
   ngOnInit(): void {

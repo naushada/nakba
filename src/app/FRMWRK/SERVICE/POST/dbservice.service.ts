@@ -20,6 +20,10 @@ export class DbserviceService {
     return this.http.get<ParcelDetails>(this._url);
   }
 
+  put_parcelInfo(shipping:FormGroup): Observable<ParcelDetails> {
+    return this.http.put<ParcelDetails>(this._url +'/newShipping', shipping, this.httpHeader)
+  }
+
   post_parcelInfo(shipping:FormGroup): Observable<ParcelDetails> {
     return this.http.post<ParcelDetails>(this._url +'/newShipping', shipping, this.httpHeader)
   }
