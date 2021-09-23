@@ -60,10 +60,11 @@ mainMenuBar : MainMenuBar = [
   }
 
   transform(item: string, parent:string) : string {
+    let tmpItem: string = "";
     //Removing the white space in between to form the routerLink
-    let tmpItem:string = item.replace(/ /g, '');
-    tmpItem = parent + "/"+ tmpItem;
-    console.log(tmpItem);
+    tmpItem = item.replace(/ /g, '');
+    tmpItem = parent + "/" + tmpItem;
+    //console.log(tmpItem);
     return(tmpItem);
   }
 

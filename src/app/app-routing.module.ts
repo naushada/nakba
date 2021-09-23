@@ -25,6 +25,8 @@ const routes: Routes = [
   { path: 'manifesting', component: ManifestingComponent },
   { path: 'shipment-pricing', component: ShipmentPricingComponent },
   { path: 'menu-bar/SHIPPING/Shipping', component: ShippingComponent },
+  { path: 'TRACKING/TrackingEntry', component: TrackingEntryComponent },
+  { path: 'TRACKING/TrackingEnquiry', component: TrackingEnquiryComponent },
   { path: 'supplies', component: SuppliesComponent },
   /* Reporting Submenu Items(s) */
   { path: 'operations-discrepancy-report', component: OperationsDiscrepancyReportComponent },

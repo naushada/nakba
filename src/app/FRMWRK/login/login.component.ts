@@ -2,8 +2,9 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {Router} from '@angular/router';
+import { DbserviceService } from '../SERVICE/POST/dbservice.service';
 
 @Component({
   selector: 'app-login',
@@ -15,41 +16,44 @@ export class LoginComponent implements OnInit {
   value = ""
   isLoginSuccess:boolean = false;
 
-  loginForm;
+  loginFrm : FormGroup;
 
   ngOnInit(): void {
   }
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private httpClient:HttpClient) {
-
-    this.loginForm = this.formBuilder.group({username:[''],password:['']});
+  constructor(private router: Router, private fb: FormBuilder, private httpClient:HttpClient, private get:DbserviceService) {
+    this.loginFrm = this.fb.group({login: this.fb.group({
+      username:[''],
+      password:['']})});
   }
 
   get username() {
-      return(this.loginForm.get('username'));
+      return(this.loginFrm.value.login.get('username'));
   }
 
   get password() {
-    return(this.loginForm.get('password'));
+    return(this.loginFrm.get('password'));
   }
 
 
 
   onLogin() : void 
   {
-    console.log(this.loginForm.value);
-    var formData: any = new FormData();
-    formData.append("username", this.username);
-    formData.append("password", this.password);
+    console.log(this.loginFrm.value.login.username);
+    //var formData: any = new FormData();
+    //formData.append("username", this.username);
+    //formData.append("password", this.password);
 
-    this.httpClient.post('http://localhost:4000/api/create-user', formData).subscribe((response) => console.log(response), (error) => console.log(error));
+    let uri : string = "http://localhost:8080/api/login?username=" + this.loginFrm.value.login.username + "&password=" + this.loginFrm.value.login.password;
+    //this.httpClient.post('http://localhost:4000/api/create-user', this.loginFrm).subscribe((response) => console.log(response), (error) => console.log(error));
+    this.httpClient.get(uri).subscribe((response) => console.log("success " + response), (error) => console.log("Naushad error " + error));
 
-    if(this.loginForm.value.username == "admin") {
+    if(this.loginFrm.value.login.username == "admin") {
       this.isLoginSuccess = true;
       this.router.navigate(["menu-bar"])
     } else {
-      alert("Invalid credentials "+ this.loginForm.value);
-      console.log(this.loginForm.value);
+      alert("Invalid credentials "+ this.loginFrm.value.login.username);
+      console.log(this.loginFrm.value.login.value);
       this.router.navigate(["login"])
     }
   }

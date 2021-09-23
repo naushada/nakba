@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ParcelDetails } from 'src/app/SHIPPING/parcelInfo';
@@ -26,5 +26,12 @@ export class DbserviceService {
 
   post_parcelInfo(shipping:FormGroup): Observable<ParcelDetails> {
     return this.http.post<ParcelDetails>(this._url +'/newShipping', shipping, this.httpHeader)
+  }
+
+  authenticateUser(credentials:FormGroup) {
+    let qparam: string = "username=" + credentials.get('username') + "&password=" + credentials.get('password');
+
+    return this.http.get(this._url + '/login?' + qparam);
+
   }
 }
