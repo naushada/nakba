@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
     //formData.append("username", this.username);
     //formData.append("password", this.password);
 
+    //let uri : string = "http://192.168.0.189:8080/api/login?username=" + this.loginFrm.value.login.username + "&password=" + this.loginFrm.value.login.password;
+    //let uri : string = "http://localhost:8080/api/shipping";
     let uri : string = "http://localhost:8080/api/login?username=" + this.loginFrm.value.login.username + "&password=" + this.loginFrm.value.login.password;
     //this.httpClient.post('http://localhost:4000/api/create-user', this.loginFrm).subscribe((response) => console.log(response), (error) => console.log(error));
     this.httpClient.get(uri).subscribe((response) => console.log("success " + response), (error) => console.log("Naushad error " + error));
